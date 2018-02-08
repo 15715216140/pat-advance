@@ -69,7 +69,7 @@ bool com(stu a, stu b) {
 }
 int main() {
 	map<string,int> mp;
-	int m, n, t, sco, cnt = 1, res = 0;
+	int m, n, t, sco, cnt = 0, res = 0;
 	vector<stu> a, ans;
 	cin >> n >> m >> t;
 	string s;
@@ -82,17 +82,17 @@ int main() {
 	}
 	for(int i = 1; i <= m; i++) {
 		cin >> s >> sco;
-		if(mp[s] > 0) {
-			a[mp[s]-1].mid = sco;
+		if(mp.count(s) == 1) {
+			a[mp[s]].mid = sco;
 		}
 	}
 	for(int i = 1; i <= t; i++) {
 		cin >> s >> sco;
-		if(mp[s] > 0) {
-			a[mp[s]-1].end = sco;
-			if(a[mp[s]-1].mid > a[mp[s]-1].end)		a[mp[s]-1].fin = a[mp[s]-1].mid*0.4+a[mp[s]-1].end*0.6 + 0.5;
-			else 									a[mp[s]-1].fin = a[mp[s]-1].end;
-			if(a[mp[s]-1].fin >=60) ans.push_back(a[mp[s]-1]);
+		if(mp.count(s) == 1) {
+			a[mp[s]].end = sco;
+			if(a[mp[s]].mid > a[mp[s]].end)		a[mp[s]].fin = a[mp[s]].mid*0.4+a[mp[s]].end*0.6 + 0.5;
+			else 									a[mp[s]].fin = a[mp[s]].end;
+			if(a[mp[s]].fin >=60)	 ans.push_back(a[mp[s]]);
 		}
 	}
 	sort(ans.begin(), ans.end(),com);
