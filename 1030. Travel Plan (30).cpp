@@ -32,7 +32,7 @@ Sample Input
 2 3 1 20
 Sample Output
 0 2 3 3 40  
-
+遍历求最短路径，若有多条最短路径，输出最少花费的那个(输出具体路径，路径长度，花费) 
 #include <iostream>
 #include <stack>
 #include <algorithm>
