@@ -1,15 +1,6 @@
 
 1041. Be Unique (20)
-时间限制
-100 ms
-内存限制
-65536 kB
-代码长度限制
-16000 B
-判题程序
-Standard
-作者
-CHEN, Yue
+
 Being unique is so important to people on Mars that even their lottery is designed in a unique way. The rule of winning is simple: one bets on a number chosen from [1, 104]. The first one who bets on a unique number wins. For example, if there are 7 people betting on 5 31 5 88 67 88 17, then the second one who bets on 31 wins.
 
 Input Specification:
@@ -27,7 +18,8 @@ Sample Output 1:
 Sample Input 2:
 5 888 666 666 888 888
 Sample Output 2:
-None#include <iostream>
+None
+#include <iostream>
 using namespace std;
 int main() {
 	int n, m[100001] = {0}, a[100001];

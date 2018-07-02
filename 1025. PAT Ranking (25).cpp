@@ -1,14 +1,5 @@
 1025. PAT Ranking (25)
-时间限制
-200 ms
-内存限制
-65536 kB
-代码长度限制
-16000 B
-判题程序
-Standard
-作者
-CHEN, Yue
+
 Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.
 
 Input Specification:
@@ -47,7 +38,7 @@ Sample Output:
 1234567890002 7 1 5
 1234567890013 8 2 3
 1234567890011 9 2 4
-提交代码
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

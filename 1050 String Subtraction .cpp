@@ -16,11 +16,7 @@ aeiou
 Sample Output:
 
 Thy r stdnts.
-作者: CHEN, Yue
-单位: PAT联盟
-时间限制: 100ms
-内存限制: 64MB
-代码长度限制: 16KB
+
 #include <iostream>
 using namespace std;
 int main() {

@@ -1,15 +1,6 @@
 
 1003. Emergency (25)
-Ê±¼äÏŞÖÆ
-400 ms
-ÄÚ´æÏŞÖÆ
-65536 kB
-´úÂë³¤¶ÈÏŞÖÆ
-16000 B
-ÅĞÌâ³ÌĞò
-Standard
-×÷Õß
-CHEN, Yue
+
 As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.
 
 Input
@@ -33,7 +24,7 @@ Sample Input
 Sample Output
 2 4
 
-±éÀúÃ¿ÌõÂ·¾¶£¬Êä³ö×î¶ÌÂ·¾¶ÌõÊı£¬ºÍ×î¶ÌÂ·¾¶ÖĞÈËÊı×î¶àµÄ×ÜÈËÊı 
+éå†æ¯æ¡è·¯å¾„ï¼Œè¾“å‡ºæœ€çŸ­è·¯å¾„æ¡æ•°ï¼Œå’Œæœ€çŸ­è·¯å¾„ä¸­äººæ•°æœ€å¤šçš„æ€»äººæ•° 
 
 #include <iostream>
 #include <algorithm>
@@ -42,13 +33,13 @@ int map[510][510] = {0}, weight[510] = {0}, sum[510] = {0};
 bool vis[510] = {false};
 int cnt = 0, peo, minl = 999999, sump = 0,suml= 0, l = 0, n, m, c1, c2;
 int dfs(int be) {
-	if(be == c2) {//ÉîËÑ±éÀúÃ¿ÌõÂ·¾¶£» 
-		if(l < minl) {//Èç¹ûĞÂÂ·¾¶¸üĞ¡£¬´ËÊ±×îĞ¡Â·¾¶ÊıÁ¿ÖØÖÃÎªÒ»£¬×ÜÈËÊıÎªµ±Ç°ÈËÊı£» 
+	if(be == c2) {//æ·±æœéå†æ¯æ¡è·¯å¾„ï¼› 
+		if(l < minl) {//å¦‚æœæ–°è·¯å¾„æ›´å°ï¼Œæ­¤æ—¶æœ€å°è·¯å¾„æ•°é‡é‡ç½®ä¸ºä¸€ï¼Œæ€»äººæ•°ä¸ºå½“å‰äººæ•°ï¼› 
 			minl = l;
 			suml = 1;
 			sump = peo;
-		} else if (l == minl) {//Èç¹ûĞÂÂ·¾¶³¤¶È==Ô­Â·¾¶³¤¶È£»´ËÊ±×îĞ¡Â·¾¶ÊıÁ¿+1
-								//£¬×ÜÈÏÊ¶Îªµ±Ç°ÈËÊı = µ±Ç°ÈËÊıºÍ¾ÉÂ·¾¶ÈËÊıÈ¡×î´óÖµ  
+		} else if (l == minl) {//å¦‚æœæ–°è·¯å¾„é•¿åº¦==åŸè·¯å¾„é•¿åº¦ï¼›æ­¤æ—¶æœ€å°è·¯å¾„æ•°é‡+1
+								//ï¼Œæ€»è®¤è¯†ä¸ºå½“å‰äººæ•° = å½“å‰äººæ•°å’Œæ—§è·¯å¾„äººæ•°å–æœ€å¤§å€¼  
 			suml++;
 			sump = max(sump,peo);
 		}

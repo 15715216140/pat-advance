@@ -1,15 +1,7 @@
 1137. Final Grading (25)
-时间限制
-100 ms
-内存限制
-65536 kB
-代码长度限制
-16000 B
-判题程序
-Standard
-作者
+
 CHEN, Yue
-For a student taking the online course "Data Structures" on China University MOOC (http://www.icourse163.org/), to be qualified for a certificate, he/she must first obtain no less than 200 points from the online programming assignments, and then receive a final grade no less than 60 out of 100. The final grade is calculated by G = (Gmid-termx 40% + Gfinalx 60%) if Gmid-term > Gfinal, or Gfinal will be taken as the final grade G. Here Gmid-term and Gfinal are the student's scores of the mid-term and the final exams, respectively.
+For a student taking the online course "Data Structures" on China University MOOC (www.icourse163.org/), to be qualified for a certificate, he/she must first obtain no less than 200 points from the online programming assignments, and then receive a final grade no less than 60 out of 100. The final grade is calculated by G = (Gmid-termx 40% + Gfinalx 60%) if Gmid-term > Gfinal, or Gfinal will be taken as the final grade G. Here Gmid-term and Gfinal are the student's scores of the mid-term and the final exams, respectively.
 
 The problem is that different exams have different grading sheets. Your job is to write a program to merge all the grading sheets into one.
 

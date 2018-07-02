@@ -1,17 +1,8 @@
 1136. A Delayed Palindrome (20)
-时间限制
-400 ms
-内存限制
-65536 kB
-代码长度限制
-16000 B
-判题程序
-Standard
-作者
-CHEN, Yue
+
 Consider a positive integer N written in standard notation with k+1 digits ai as ak...a1a0 with 0 <= ai < 10 for all i and ak > 0. Then N is palindromic if and only if ai = ak-i for all i. Zero is written 0 and is also palindromic by definition.
 
-Non-palindromic numbers can be paired with palindromic ones via a series of operations. First, the non-palindromic number is reversed and the result is added to the original number. If the result is not a palindromic number, this is repeated until it gives a palindromic number. Such number is called a delayed palindrome. (Quoted from https://en.wikipedia.org/wiki/Palindromic_number)
+Non-palindromic numbers can be paired with palindromic ones via a series of operations. First, the non-palindromic number is reversed and the result is added to the original number. If the result is not a palindromic number, this is repeated until it gives a palindromic number. Such number is called a delayed palindrome.
 
 Given any positive integer, you are supposed to find its paired palindromic number.
 
@@ -52,51 +43,51 @@ Not found in 10 iterations.
 #include <algorithm>
 using namespace std;
 int huwen(string s) {
-	for(int i = 0; i < s.size() ; i++) {
-		if(s[i] != s[s.size()-i-1])	return 0;
-	}
-	return 1;
+    for(int i = 0; i < s.size() ; i++) {
+        if(s[i] != s[s.size()-i-1])    return 0;
+    }
+    return 1;
 }
 string hu(string s) {
-	string ss = s;
-	for(int i = 0; i < s.size() ; i++) {
-		ss[i] = s[s.size()-i-1];
-	}
-	return ss;
+    string ss = s;
+    for(int i = 0; i < s.size() ; i++) {
+        ss[i] = s[s.size()-i-1];
+    }
+    return ss;
 }
 string add(string s1, string s2){
-	string s = s1;
-	int jin = 0;
-	for(int i = s1.size()-1 ; i >= 0; i--) {
-		s[i] = (s1[i]-'0' + s2[i] -'0' + jin ) % 10 + '0';
-		jin = (s1[i]-'0' + s2[i] -'0' + jin ) / 10;
-	} 
-	if(jin >= 1) {
-		char c = jin + '0';
-		s = c + s;
-	}
-	return s;
+    string s = s1;
+    int jin = 0;
+    for(int i = s1.size()-1 ; i >= 0; i--) {
+        s[i] = (s1[i]-'0' + s2[i] -'0' + jin ) % 10 + '0';
+        jin = (s1[i]-'0' + s2[i] -'0' + jin ) / 10;
+    }
+    if(jin >= 1) {
+        char c = jin + '0';
+        s = c + s;
+    }
+    return s;
 }
 int main() {
-	int num = 10;
-	string n, nn, nnn;
-	cin >> n;
-	if(huwen(n) == 1)	 {
-		cout << n << " is a palindromic number.\n";
-		return 0;
-	}
-	while(num--) {
-		nn = hu(n);
-		nnn = add(n, nn);
-		cout << n << " + " << nn << " = " << nnn << endl;
-		if(huwen(nnn) == 1) {
-			cout << nnn << " is a palindromic number.\n";
-			return 0;
-		}
-		n = nnn;
-	}
-	cout << "Not found in 10 iterations.\n";
-	 
-return 0;
+    int num = 10;
+    string n, nn, nnn;
+    cin >> n;
+    if(huwen(n) == 1)     {
+        cout << n << " is a palindromic number.\n";
+        return 0;
+    }
+    while(num--) {
+        nn = hu(n);
+        nnn = add(n, nn);
+        cout << n << " + " << nn << " = " << nnn << endl;
+        if(huwen(nnn) == 1) {
+            cout << nnn << " is a palindromic number.\n";
+            return 0;
+        }
+        n = nnn;
+    }
+    cout << "Not found in 10 iterations.\n";
+    
+    return 0;
 }
 

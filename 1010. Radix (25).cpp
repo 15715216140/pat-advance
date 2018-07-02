@@ -1,14 +1,4 @@
 1010. Radix (25)
-Ê±¼äÏŞÖÆ
-400 ms
-ÄÚ´æÏŞÖÆ
-65536 kB
-´úÂë³¤¶ÈÏŞÖÆ
-16000 B
-ÅĞÌâ³ÌĞò
-Standard
-×÷Õß
-CHEN, Yue
 Given a pair of positive integers, for example, 6 and 110, can this equation 6 = 110 be true? The answer is "yes", if 6 is a decimal number and 110 is a binary number.
 
 Now for any pair of positive integers N1 and N2, your task is to find the radix of one number while that of the other is given.
@@ -31,7 +21,7 @@ Sample Input 2:
 1 ab 1 2
 Sample Output 2:
 Impossible
-0.7.19²âÊÔµãÃ»Í¨¹ı 3·ÖÄÃ²»×¡ÁË 
+0.7.19æµ‹è¯•ç‚¹æ²¡é€šè¿‡ 3åˆ†æ‹¿ä¸ä½äº† 
 #include <iostream>
 using namespace std;
 int main() {

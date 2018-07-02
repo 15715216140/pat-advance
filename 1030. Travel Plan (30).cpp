@@ -1,14 +1,5 @@
 1030. Travel Plan (30)
-时间限制
-400 ms
-内存限制
-65536 kB
-代码长度限制
-16000 B
-判题程序
-Standard
-作者
-CHEN, Yue
+
 A traveler's map gives the distances between cities along the highways, together with the cost of each highway. Now you are supposed to write a program to help a traveler to decide the shortest path between his/her starting city and the destination. If such a shortest path is not unique, you are supposed to output the one with the minimum cost, which is guaranteed to be unique.
 
 Input Specification:

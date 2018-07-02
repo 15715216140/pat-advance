@@ -1,14 +1,5 @@
 1037. Magic Coupon (25)
-Ê±¼äÏŞÖÆ
-100 ms
-ÄÚ´æÏŞÖÆ
-65536 kB
-´úÂë³¤¶ÈÏŞÖÆ
-16000 B
-ÅĞÌâ³ÌĞò
-Standard
-×÷Õß
-CHEN, Yue
+
 The magic shop in Mars is offering some magic coupons. Each coupon has an integer N printed on it, meaning that when you use this coupon with a product, you may get N times the value of that product back! What is more, the shop also offers some bonus product for free. However, if you apply a coupon with a positive N to this bonus product, you will have to pay the shop N times the value of the bonus product... but hey, magically, they have some coupons with negative N's!
 
 For example, given a set of coupons {1 2 4 -1}, and a set of product values {7 6 -2 -3} (in Mars dollars M$) where a negative value corresponds to a bonus product. You can apply coupon 3 (with N being 4) to product 1 (with value M$7) to get M$28 back; coupon 2 to product 2 to get M$12 back; and coupon 4 to product 4 to get M$3 back. On the other hand, if you apply coupon 3 to product 4, you will have to pay M$12 to the shop.
@@ -29,8 +20,8 @@ Sample Input:
 4
 7 6 -2 -3
 
-Á½×évector, ´óµ½Ğ¡ÅÅĞò,  Èç¹û¶¼´óÓÚ0,Ïà³Ëµş¼Ó,Ö±µ½È¯»òÕßÉÌÆ·ÓÃÍê 
-Á½×évector, Ğ¡µ½´óÅÅĞò,  Èç¹û¶¼Ğ¡ÓÚ0,Ïà³Ëµş¼Ó,Ö±µ½È¯»òÕßÉÌÆ·ÓÃÍê 
+ä¸¤ç»„vector, å¤§åˆ°å°æ’åº,  å¦‚æœéƒ½å¤§äº0,ç›¸ä¹˜å åŠ ,ç›´åˆ°åˆ¸æˆ–è€…å•†å“ç”¨å®Œ 
+ä¸¤ç»„vector, å°åˆ°å¤§æ’åº,  å¦‚æœéƒ½å°äº0,ç›¸ä¹˜å åŠ ,ç›´åˆ°åˆ¸æˆ–è€…å•†å“ç”¨å®Œ 
 #include <iostream>
 #include <vector>
 #include <algorithm>

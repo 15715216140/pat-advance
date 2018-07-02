@@ -1,14 +1,5 @@
 1027. Colors in Mars (20)
-时间限制
-400 ms
-内存限制
-65536 kB
-代码长度限制
-16000 B
-判题程序
-Standard
-作者
-CHEN, Yue
+
 People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color is represented by a 6-digit number, where the first 2 digits are for Red, the middle 2 digits for Green, and the last 2 digits for Blue. The only difference is that they use radix 13 (0-9 and A-C) instead of 16. Now given a color in three decimal numbers (each between 0 and 168), you are supposed to output their Mars RGB values.
 
 Input
@@ -23,7 +14,7 @@ Sample Input
 15 43 71
 Sample Output
 #123456
-提交代码
+
 #include <iostream>
 using namespace std;
 int main() {

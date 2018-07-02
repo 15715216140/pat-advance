@@ -1,14 +1,5 @@
 1020. Tree Traversals (25)
-Ê±¼äÏÞÖÆ
-400 ms
-ÄÚ´æÏÞÖÆ
-65536 kB
-´úÂë³¤¶ÈÏÞÖÆ
-16000 B
-ÅÐÌâ³ÌÐò
-Standard
-×÷Õß
-CHEN, Yue
+
 Suppose that all the keys in a binary tree are distinct positive integers. Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of the corresponding binary tree.
 
 Input Specification:
@@ -33,31 +24,30 @@ int post[35];
 int in[35];
 int a[10000] = {0};
 int n , cnt = 0;
-void pre(int root, int begin, int end, int index) {//°Ñ¿ÕÎ»ÖÃÒ²Áô³öÀ´£¬±êºÅ£¬ÓÐÊý¾ÝµÄ²¹ÉÏ£¬Ã»ÓÐµÄ¿Õ×Å£» 
-	if(begin > end) 	return ;
-	int i = begin;
-	while(in[i] != post[root])	i++;
-	a[index] = in[i];
-	pre(root-1 + i - end, begin,i-1,2*index + 1);
-	pre(root-1, i+1,end,2*index + 2);
-	return ;
-	
+void pre(int root, int begin, int end, int index) {//æŠŠç©ºä½ç½®ä¹Ÿç•™å‡ºæ¥ï¼Œæ ‡å·ï¼Œæœ‰æ•°æ®çš„è¡¥ä¸Šï¼Œæ²¡æœ‰çš„ç©ºç€ï¼›
+    if(begin > end)     return ;
+    int i = begin;
+    while(in[i] != post[root])    i++;
+    a[index] = in[i];
+    pre(root-1 + i - end, begin,i-1,2*index + 1);
+    pre(root-1, i+1,end,2*index + 2);
+    return ;
+    
 }
 int main() {
-//	freopen("test.txt","r",stdin);
-	cin >> n;
-	for(int i = 0; i < n; i++) 
-		cin >> post[i];
-	for(int i = 0; i < n; i++) 
-		cin >> in[i];
-	pre(n-1,0,n-1,0);
-	for(int i = 0; i < 10000; i++) {
-			if(a[i]) {
-				if(i != 0)	cout << ' ';
-				cout << a[i];
-			}	
-	}
-	return 0;
+    cin >> n;
+    for(int i = 0; i < n; i++)
+        cin >> post[i];
+    for(int i = 0; i < n; i++)
+        cin >> in[i];
+    pre(n-1,0,n-1,0);
+    for(int i = 0; i < 10000; i++) {
+        if(a[i]) {
+            if(i != 0)    cout << ' ';
+            cout << a[i];
+        }
+    }
+    return 0;
 }
 
 

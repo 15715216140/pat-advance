@@ -1,14 +1,5 @@
 1038. Recover the Smallest Number (30)
-Ê±¼äÏŞÖÆ
-400 ms
-ÄÚ´æÏŞÖÆ
-65536 kB
-´úÂë³¤¶ÈÏŞÖÆ
-16000 B
-ÅĞÌâ³ÌĞò
-Standard
-×÷Õß
-CHEN, Yue
+
 Given a collection of number segments, you are supposed to recover the smallest number from them. For example, given {32, 321, 3214, 0229, 87}, we can recover many numbers such like 32-321-3214-0229-87 or 0229-32-87-321-3214 with respect to different orders of combinations of these segments, and the smallest number is 0229-321-3214-32-87.
 
 Input Specification:
@@ -24,8 +15,8 @@ Sample Input:
 Sample Output:
 22932132143287
 
-×Ö·û´®ÅÅĞò ,±£Ö¤Á½¸ö×Ö·û´®Á¬½Ó×ÖµäĞò×îĞ¡ ,×îºóÊä³ö±£Ö¤¿ªÍ·²»ÄÜÊÇ0
-¿¼ÂÇÒ»´ÎÌØÊâÇé¿ö£¬È«Îª0£¬Êä³ö0£» 
+å­—ç¬¦ä¸²æ’åº ,ä¿è¯ä¸¤ä¸ªå­—ç¬¦ä¸²è¿æ¥å­—å…¸åºæœ€å° ,æœ€åè¾“å‡ºä¿è¯å¼€å¤´ä¸èƒ½æ˜¯0
+è€ƒè™‘ä¸€æ¬¡ç‰¹æ®Šæƒ…å†µï¼Œå…¨ä¸º0ï¼Œè¾“å‡º0ï¼› 
 
 #include <iostream>
 #include <algorithm>
