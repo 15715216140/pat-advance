@@ -44,43 +44,43 @@ Sample Output:
 #include <algorithm>
 using namespace std;
 struct stu {
-	string id;
-	int sco, frank, gro, rank;
+    string id;
+    int sco, frank, gro, rank;
 };
 bool cmp(stu x, stu y) {
-	if(x.sco == y.sco )	return x.id < y.id ;
-	else				return x.sco > y.sco ;
+    if(x.sco == y.sco )    return x.id < y.id ;
+    else                return x.sco > y.sco ;
 }
 int main() {
-	vector<stu> ans;
-	int n, m, tsco;
-	string tid;
-	cin >> n;
-	for(int i = 1; i <= n; i++) {
-		vector<stu> v;
-		cin >> m;
-		for(int j = 0; j < m; j++) {
-			cin >> tid >>  tsco;
-			v.push_back(stu {tid,tsco,0,i,0});
-		}
-		sort(v.begin(),v.end(),cmp);
-		v[0].rank = 1;
-		ans.push_back(v[0]);
-		for(int j = 1; j < v.size(); j++) {
-			if(v[j].sco == v[j-1].sco)	v[j].rank = v[j-1].rank;
-			else						v[j].rank = j+1;
-			ans.push_back(v[j]);
-		}
-	}
-	sort(ans.begin(),ans.end(),cmp);
-	ans[0].frank = 1;
-	for(int j = 1; j < ans.size(); j++) {
-		if(ans[j].sco == ans[j-1].sco)	ans[j].frank = ans[j-1].frank;
-		else							ans[j].frank = j+1;
-	}
-	cout << ans.size() << endl;
-	for(int i = 0; i < ans.size(); i++)
-		cout << ans[i].id << ' ' << ans[i].frank << ' ' << ans[i].gro << ' ' << ans[i].rank << endl;
-	return 0;
+    vector<stu> ans;
+    int n, m, tsco;
+    string tid;
+    cin >> n;
+    for(int i = 1; i <= n; i++) {
+        vector<stu> v;
+        cin >> m;
+        for(int j = 0; j < m; j++) {
+            cin >> tid >>  tsco;
+            v.push_back(stu {tid,tsco,0,i,0});
+        }
+        sort(v.begin(),v.end(),cmp);
+        v[0].rank = 1;
+        ans.push_back(v[0]);
+        for(int j = 1; j < v.size(); j++) {
+            if(v[j].sco == v[j-1].sco)    v[j].rank = v[j-1].rank;
+            else                        v[j].rank = j+1;
+            ans.push_back(v[j]);
+        }
+    }
+    sort(ans.begin(),ans.end(),cmp);
+    ans[0].frank = 1;
+    for(int j = 1; j < ans.size(); j++) {
+        if(ans[j].sco == ans[j-1].sco)    ans[j].frank = ans[j-1].frank;
+        else                            ans[j].frank = j+1;
+    }
+    cout << ans.size() << endl;
+    for(int i = 0; i < ans.size(); i++)
+        cout << ans[i].id << ' ' << ans[i].frank << ' ' << ans[i].gro << ' ' << ans[i].rank << endl;
+    return 0;
 }
 

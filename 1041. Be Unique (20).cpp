@@ -22,18 +22,18 @@ None
 #include <iostream>
 using namespace std;
 int main() {
-	int n, m[100001] = {0}, a[100001];
-	cin >> n;
-	for(int i = 0; i < n; i++){
-		cin >> a[i];
-		m[a[i]]++;
-	}
-	for(int i = 0; i < n; i++) {
-		if(m[a[i]] == 1) {
-			cout << a[i];
-			return 0;
-		}
-	}
-	cout << "None";
-	return 0;
+    int n, m[100001] = {0}, a[100001];
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+        m[a[i]]++;
+    }
+    for(int i = 0; i < n; i++) {
+        if(m[a[i]] == 1) {
+            cout << a[i];
+            return 0;
+        }
+    }
+    cout << "None";
+    return 0;
 }

@@ -21,21 +21,21 @@ Sample Output
 #include <algorithm>
 using namespace std;
 int main() {
-	int n, m, t;
-	vector<int> v;
-	cin >> n;
-	for(int i = 0; i < n; i++) {
-		cin >> t;
-		v.push_back(t);
-	}
-	cin >> m;
-	for(int i = 0; i < m; i++) {
-		cin >> t;
-		v.push_back(t);
-	}
-	nth_element(v.begin(),v.begin() + ((m+n-1) /2 ),v.end());
-	cout << v[(m+n-1)/2];
-	return 0;
+    int n, m, t;
+    vector<int> v;
+    cin >> n;
+    for(int i = 0; i < n; i++) {
+        cin >> t;
+        v.push_back(t);
+    }
+    cin >> m;
+    for(int i = 0; i < m; i++) {
+        cin >> t;
+        v.push_back(t);
+    }
+    nth_element(v.begin(),v.begin() + ((m+n-1) /2 ),v.end());
+    cout << v[(m+n-1)/2];
+    return 0;
 }
 
 ·¨¶þ
@@ -44,25 +44,25 @@ int main() {
 #include <queue>
 using namespace std;
 int main() {
-	queue<int> a, b;
-	int n, m, t, ans;
-	cin >> n;
-	for(int i = 0; i < n; i++) {
-		cin >> t;
-		a.push(t); 
-	}
-	cin >> m;
-	for(int i = 0; i < m; i++) {
-		cin >> t;
-		b.push(t); 
-	}
-	a.push(INT_MAX); 
-	b.push(INT_MAX);  
-	for(int i = 0; i < (n+m+1) / 2; i++) {
-		ans = min(a.front() , b.front() );
-		if(a.front() < b.front())	a.pop() ;
-		else						b.pop() ;	
-	}
-	cout << ans;
-return 0;
-} 
+    queue<int> a, b;
+    int n, m, t, ans;
+    cin >> n;
+    for(int i = 0; i < n; i++) {
+        cin >> t;
+        a.push(t);
+    }
+    cin >> m;
+    for(int i = 0; i < m; i++) {
+        cin >> t;
+        b.push(t);
+    }
+    a.push(INT_MAX);
+    b.push(INT_MAX);
+    for(int i = 0; i < (n+m+1) / 2; i++) {
+        ans = min(a.front() , b.front() );
+        if(a.front() < b.front())    a.pop() ;
+        else                        b.pop() ;
+    }
+    cout << ans;
+    return 0;
+}

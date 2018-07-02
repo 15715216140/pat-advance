@@ -46,37 +46,37 @@ Sample Output 3
 #include <algorithm>
 using namespace std;
 struct stu {
-	string name;
-	int sco, id;
+    string name;
+    int sco, id;
 };
 bool cmp1(stu a, stu b) {
-	return a.id < b.id ;
+    return a.id < b.id ;
 }
 bool cmp2(stu a, stu b) {
-	if(a.name == b.name )	return a.id < b.id ;
-	else	return a.name < b.name ;
+    if(a.name == b.name )    return a.id < b.id ;
+    else    return a.name < b.name ;
 }
 bool cmp3(stu a, stu b) {
-	if(a.sco == b.sco )	return a.id < b.id ;
-	else	return a.sco < b.sco ;
+    if(a.sco == b.sco )    return a.id < b.id ;
+    else    return a.sco < b.sco ;
 }
 int main() {
-	int n, k;
-	cin >> n >> k;
-	vector<stu> v;
-	for(int i = 0; i < n; i++) {
-		string  tname;
-		int tsco, tid;
-		scanf("%d",&tid) ;
-		cin >> tname ;
-		scanf("%d",&tsco);
-		v.push_back(stu{tname,tsco,tid});
-	}
-	if(k == 1)	sort(v.begin(),v.end(),cmp1);
-	if(k == 2)	sort(v.begin(),v.end(),cmp2);
-	if(k == 3)	sort(v.begin(),v.end(),cmp3);
-	for(int i = 0; i < n; i++) 
-		printf("%06d %s %d\n", v[i].id, v[i].name.c_str(), v[i].sco);
-	return 0;
+    int n, k;
+    cin >> n >> k;
+    vector<stu> v;
+    for(int i = 0; i < n; i++) {
+        string  tname;
+        int tsco, tid;
+        scanf("%d",&tid) ;
+        cin >> tname ;
+        scanf("%d",&tsco);
+        v.push_back(stu{tname,tsco,tid});
+    }
+    if(k == 1)    sort(v.begin(),v.end(),cmp1);
+    if(k == 2)    sort(v.begin(),v.end(),cmp2);
+    if(k == 3)    sort(v.begin(),v.end(),cmp3);
+    for(int i = 0; i < n; i++)
+        printf("%06d %s %d\n", v[i].id, v[i].name.c_str(), v[i].sco);
+    return 0;
 }
 

@@ -18,14 +18,14 @@ Sample Output
 #include <iostream>
 using namespace std;
 int main() {
-	cout << '#';
-	int n;
-	while(cin >> n) {
-		int a = n/13, b = n % 13;
-		if(a >= 10)	cout << (char)('A' + a - 10);
-		else		cout << a;
-		if(b >= 10)	cout << (char)('A' + b - 10);
-		else		cout << b;
-	}
-	return 0;
+    cout << '#';
+    int n;
+    while(cin >> n) {
+        int a = n/13, b = n % 13;
+        if(a >= 10)    cout << (char)('A' + a - 10);
+        else        cout << a;
+        if(b >= 10)    cout << (char)('A' + b - 10);
+        else        cout << b;
+    }
+    return 0;
 }

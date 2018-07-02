@@ -21,30 +21,30 @@ Sample Input 2:
 1 ab 1 2
 Sample Output 2:
 Impossible
-0.7.19测试点没通过 3分拿不住了 
+0.7.19测试点没通过 3分拿不住了
 #include <iostream>
 using namespace std;
 int main() {
-	string a, b;
-	long long t, mod, sum1 = 0, sum2 = 0;
-	cin >> a >> b >> t >> mod;
-	if(t == 2)	swap(a,b);
-	for(int i = 0; i < a.size() ; i++) {
-		int f = isdigit(a[i]) ? (a[i] - '0') : (a[i] - 'a' + 10);
-		sum1  = sum1 * mod + f;
-	}
-	for(int j = 1; j < 500; j++) {
-		sum2 = 0;
-		for(int i = 0; i < b.size() ; i++) {
-			int f = isdigit(b[i]) ? (b[i] - '0') : (b[i] - 'a' + 10);
-			sum2  = sum2 * j + f;
-		}
-		if(sum1 == sum2) {
-			cout << j;
-			return 0;
-		}
-	}
-	cout << "Impossible";
-	return 0;
+    string a, b;
+    long long t, mod, sum1 = 0, sum2 = 0;
+    cin >> a >> b >> t >> mod;
+    if(t == 2)    swap(a,b);
+    for(int i = 0; i < a.size() ; i++) {
+        int f = isdigit(a[i]) ? (a[i] - '0') : (a[i] - 'a' + 10);
+        sum1  = sum1 * mod + f;
+    }
+    for(int j = 1; j < 500; j++) {
+        sum2 = 0;
+        for(int i = 0; i < b.size() ; i++) {
+            int f = isdigit(b[i]) ? (b[i] - '0') : (b[i] - 'a' + 10);
+            sum2  = sum2 * j + f;
+        }
+        if(sum1 == sum2) {
+            cout << j;
+            return 0;
+        }
+    }
+    cout << "Impossible";
+    return 0;
 }
 

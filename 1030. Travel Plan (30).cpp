@@ -22,8 +22,8 @@ Sample Input
 0 2 2 20
 2 3 1 20
 Sample Output
-0 2 3 3 40  
-遍历求最短路径，若有多条最短路径，输出最少花费的那个(输出具体路径，路径长度，花费) 
+0 2 3 3 40
+遍历求最短路径，若有多条最短路径，输出最少花费的那个(输出具体路径，路径长度，花费)
 #include <iostream>
 #include <stack>
 #include <algorithm>
@@ -32,44 +32,44 @@ stack<int> st1, st2, stans;
 int mp[510][510] = {0}, sum = 0, n, m, be, endd, ans = 99999999;
 bool vis[510] = {false};
 void dfs(int begin) {
-	if(begin == endd) {
-		if(sum < ans) {
-			ans = sum;//sum/100000表示路径长度， sum/100000表示花费; 
-			st2 = st1;//找到更优的路，就把新路记下来(路径用栈存储） 
-		}
-		return ;
-	}
-	for(int i = 0; i < n; i++) 
-		if(vis[i] == false && mp[begin][i]) {
-			sum += mp[begin][i];
-			vis[i] = true;
-			st1.push(i);
-			dfs(i);
-			st1.pop();
-			vis[i] = false;
-			sum -= mp[begin][i];
-		}
-	return ;
+    if(begin == endd) {
+        if(sum < ans) {
+            ans = sum;//sum/100000表示路径长度， sum/100000表示花费;
+            st2 = st1;//找到更优的路，就把新路记下来(路径用栈存储）
+        }
+        return ;
+    }
+    for(int i = 0; i < n; i++)
+        if(vis[i] == false && mp[begin][i]) {
+            sum += mp[begin][i];
+            vis[i] = true;
+            st1.push(i);
+            dfs(i);
+            st1.pop();
+            vis[i] = false;
+            sum -= mp[begin][i];
+        }
+    return ;
 }
 int main() {
-	int tbe, tend, tlen, tcost;;
-	cin >> n >> m >> be >> endd;
-	for(int i = 0; i < m; i++) {
-		cin >> tbe >> tend >> tlen >> tcost;
-		mp[tbe][tend] = tlen*100000 + tcost;
-		mp[tend][tbe] = tlen*100000 + tcost;
-	}
-	vis[be] = true;
-	dfs(be);
-	cout << be;
-	while(!st2.empty()) {
-		stans.push(st2.top());
-		st2.pop();
-	}
-	while(!stans.empty()) {
-		cout << ' ' << stans.top();
-		stans.pop();
-	}
-	cout << ' ' << ans / 100000 << ' '  << ans % 100000;
-	return 0;
+    int tbe, tend, tlen, tcost;;
+    cin >> n >> m >> be >> endd;
+    for(int i = 0; i < m; i++) {
+        cin >> tbe >> tend >> tlen >> tcost;
+        mp[tbe][tend] = tlen*100000 + tcost;
+        mp[tend][tbe] = tlen*100000 + tcost;
+    }
+    vis[be] = true;
+    dfs(be);
+    cout << be;
+    while(!st2.empty()) {
+        stans.push(st2.top());
+        st2.pop();
+    }
+    while(!stans.empty()) {
+        cout << ' ' << stans.top();
+        stans.pop();
+    }
+    cout << ' ' << ans / 100000 << ' '  << ans % 100000;
+    return 0;
 }
