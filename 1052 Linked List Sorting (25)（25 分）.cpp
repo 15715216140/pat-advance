@@ -32,22 +32,25 @@ Sample Output:
 22222 1000 33333
 33333 100000 -1
 #
-给出链表的节点和地址和键值，要求根据键值从小到大排序，并依次输出节点（包括节点的地址，键值，和下一个地址）。结构体中address，value, next， 和flag依次表示节点地址，键值，下一个地址，是否在内存中存在的地址。把地址遍历，在链表中的节点收进vector中。排序。注意：1.链表中没有元素时候第一行不输出，第二行输出 0 -1。 2.链表元素个数为1也需要特判。
+给出链表的节点和地址和键值，要求根据键值从小到大排序，并依次输出节点（包括节点的地址，键值，和下一个地址）。
+结构体中address，value, next， 和flag依次表示节点地址，键值，下一个地址，是否在内存中存在的地址。
+把地址遍历，在链表中的节点收进vector中。排序。
+注意：1.链表中没有元素时候第一行不输出，第二行输出 0 -1。
 #
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 struct node
 {
     int address, value, next, flag;
-};
+}a[100001];
 bool cmp(node a, node b) {
     return a.value < b.value;
 }
 int main() {
     int n, begin;
     vector<node> v;
-    node a[100001];
     cin >> n >> begin;
     for(int i = 0; i < n; i++) {
         int address, value, next;
@@ -61,17 +64,13 @@ int main() {
     }
     sort(v.begin(), v.end(),cmp);
     if(v.size() != 0)  printf("%d %05d\n", v.size(), v[0].address);
-    if(v.size() == 1)   {
-        printf("%05d %d -1\n", v[0].address, v[0].value);
-        return 0;
-    }else if(v.size() == 0) {
+    if(v.size() == 0) {
         cout << "0 -1";
         return 0;
     }
-    for(int i = 0; i < v.size(); i++) {
-        if(i != v.size() - 1)
-            printf("%05d %d %05d\n", v[i].address, v[i].value , v[i+1].address);
-        else
-            printf("%05d %d -1\n", v[i].address, v[i].value);
-    }
+    for(int i = 0; i < v.size() - 1; i++) 
+        printf("%05d %d %05d\n", v[i].address, v[i].value , v[i+1].address);
+    printf("%05d %d -1\n", v[v.size() - 1].address, v[v.size() - 1].value);
+    return 0;
 }
+
